@@ -19,60 +19,16 @@ export default function Save({ attributes }) {
 	const { coverImage, videoURL } = attributes;
 
 	const blockProps = useBlockProps.save({
-		style: {
-			position: "relative",
-			width: "100%",
-			maxWidth: "560px",
-			aspectRatio: "16 / 9",
-		},
 		"data-video-url": videoURL || "",
 	});
 
 	return (
 		<div {...blockProps}>
-			{coverImage && (
-				<img
-					src={coverImage}
-					alt="Video Cover"
-					style={{
-						position: "absolute",
-						top: 0,
-						left: 0,
-						width: "100%",
-						height: "100%",
-						objectFit: "cover",
-						cursor: "pointer",
-					}}
-				/>
-			)}
-			<button
-				type="button"
-				aria-label="Play video"
-				style={{
-					position: "absolute",
-					top: "0",
-					left: "0",
-					width: "100%",
-					height: "100%",
-					cursor: "pointer",
-					zIndex: 1,
-					textAlign: "center",
-					background: "rgba(0, 0, 0, 0.25)",
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					border: "none",
-					padding: 0,
-					outline: "none",
-					transition: "box-shadow 0.2s ease",
-				}}
-			>
+			{coverImage && <img src={coverImage} alt="Video Cover" />}
+			<button type="button" aria-label="Play video">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
-					fill="white"
-					width="40px"
-					height="40px"
 					role="img"
 					aria-hidden="true"
 				>

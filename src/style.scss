@@ -13,26 +13,49 @@
 	}
 }
 
-.wp-block-create-block-yt-video-block button {
-	position: absolute;
-	top: 0;
-	left: 0;
+.wp-block-create-block-yt-video-block {
+	position: relative;
 	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	text-align: center;
-	background: rgba(0, 0, 0, 0.25);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: none;
-	padding: 0;
-	outline: none;
-	transition: box-shadow 0.2s ease;
+	max-width: 560px;
+	aspect-ratio: 16 / 9;
 
-	/* Focus State */
-	&:focus {
-		box-shadow: 0 0 0 4px rgb(17, 95, 204);
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		cursor: pointer;
+	}
+
+	button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		z-index: 1;
+		text-align: center;
+		background: rgba(0, 0, 0, 0.25);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		padding: 0;
 		outline: none;
+		transition: box-shadow 0.2s ease;
+
+		/* Focus State */
+		&:focus {
+			box-shadow: 0 0 0 4px rgba(0, 60, 255, 0.8);
+		}
+
+		svg {
+			fill: white;
+			width: 40px;
+			height: 40px;
+		}
 	}
 }
