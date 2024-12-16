@@ -38,8 +38,14 @@ The block supports standard YouTube URLs, including both full URLs and shortened
 
 == Changelog ==
 
-= 0.1.3 =
+= 0.1.4 =
 * Current stable release
+* Fixes an issue where the video would not load in the editor.
+* Refactor `blockProps` to include inline styles and video URL data attribute
+* Update `aria-label` for play button to use localised string
+* Add `data-video-url` attribute to `blockProps` to expose video URL
+
+= 0.1.3 =
 * Add the `autoplay=1` parameter to the video URL
 
 = 0.1.2 =
