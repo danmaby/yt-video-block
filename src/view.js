@@ -36,13 +36,18 @@ document.addEventListener("click", (event) => {
 	const videoURL = container.dataset.videoUrl;
 
 	if (videoURL) {
+		const autoplayURL = videoURL.includes("?")
+			? `${videoURL}&autoplay=1`
+			: `${videoURL}?autoplay=1`;
+
 		// Replace the container's content with the iframe
 		container.innerHTML = `
             <iframe
                 width="100%"
                 height="100%"
-                src="${videoURL}?autoplay=1"
+                src="${autoplayURL}"
                 frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
             ></iframe>
