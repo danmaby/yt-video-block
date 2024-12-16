@@ -12,3 +12,27 @@
 		height: auto;
 	}
 }
+
+.wp-block-create-block-yt-video-block button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.25);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	padding: 0;
+	outline: none;
+	transition: box-shadow 0.2s ease;
+
+	/* Focus State */
+	&:focus {
+		box-shadow: 0 0 0 4px rgb(17, 95, 204);
+		outline: none;
+	}
+}

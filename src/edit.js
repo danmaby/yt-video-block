@@ -98,30 +98,29 @@ export default function Edit({ attributes, setAttributes }) {
 					aria-label={__("Play video", "yt-video-block")}
 					style={{
 						position: "absolute",
-						top: "50%",
-						left: "50%",
-						transform: "translate(-50%, -50%)",
+						top: "0",
+						left: "0",
+						width: "100%",
+						height: "100%",
 						cursor: "pointer",
 						zIndex: 1,
 						textAlign: "center",
-						background: "rgba(0, 0, 0, 0.5)",
-						borderRadius: "50%",
-						width: "60px",
-						height: "60px",
+						background: "rgba(0, 0, 0, 0.25)",
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
 						border: "none",
 						padding: 0,
 						outline: "none",
+						transition: "box-shadow 0.2s ease",
 					}}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 						fill="white"
-						width="30px"
-						height="30px"
+						width="40px"
+						height="40px"
 						role="img"
 						aria-hidden="true"
 					>

@@ -38,8 +38,12 @@ The block supports standard YouTube URLs, including both full URLs and shortened
 
 == Changelog ==
 
-= 0.1.5 =
+= 0.1.6 =
 * Current stable release
+* CSS improvements
+* Accessibility improvements
+
+= 0.1.5 =
 * Accessibility improvements
     * Add `aria-label` to play button in `edit.js` for improved accessibility
     * Update `aria-label` for play button in `save.js` to use a more concise string
