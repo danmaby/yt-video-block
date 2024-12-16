@@ -38,8 +38,13 @@ The block supports standard YouTube URLs, including both full URLs and shortened
 
 == Changelog ==
 
-= 0.1.4 =
+= 0.1.5 =
 * Current stable release
+* Accessibility improvements
+    * Add `aria-label` to play button in `edit.js` for improved accessibility
+    * Update `aria-label` for play button in `save.js` to use a more concise string
+
+= 0.1.4 =
 * Fixes an issue where the video would not load in the editor.
 * Refactor `blockProps` to include inline styles and video URL data attribute
 * Update `aria-label` for play button to use localised string

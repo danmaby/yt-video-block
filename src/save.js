@@ -66,7 +66,7 @@ export default function Save({ attributes }) {
 					padding: 0,
 					outline: "none",
 				}}
-				aria-label={__("Play video", "yt-video-block")}
+				aria-label="Play video"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

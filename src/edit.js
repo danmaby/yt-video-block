@@ -95,6 +95,7 @@ export default function Edit({ attributes, setAttributes }) {
 				)}
 				<button
 					type="button"
+					aria-label={__("Play video", "yt-video-block")}
 					style={{
 						position: "absolute",
 						top: "50%",
@@ -114,7 +115,6 @@ export default function Edit({ attributes, setAttributes }) {
 						padding: 0,
 						outline: "none",
 					}}
-					aria-label={__("Play video", "yt-video-block")}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
