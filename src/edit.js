@@ -32,31 +32,33 @@ import { PanelBody, TextControl, Button } from "@wordpress/components";
  */
 import "./editor.scss";
 
-// Helper function to transform YouTube URL
+// Helper function to validate and transform YouTube URLs
 const transformYouTubeURL = (url) => {
 	if (!url) return "";
 	try {
+		// Strict regex to allow only valid YouTube URLs
+		const validYouTubeURL =
+			/^https:\/\/(www\.)?(youtube\.com|youtube-nocookie\.com)\/(watch\?v=|embed\/|.+)/;
+		if (!validYouTubeURL.test(url)) {
+			throw new Error("Invalid YouTube URL");
+		}
+
 		const urlObj = new URL(url);
-		// Check if it's a YouTube URL with a "watch" query parameter
 		if (
 			urlObj.hostname.includes("youtube.com") &&
 			urlObj.searchParams.get("v")
 		) {
-			const videoId = urlObj.searchParams.get("v");
-			return `https://www.youtube-nocookie.com/embed/${videoId}`;
+			return `https://www.youtube-nocookie.com/embed/${urlObj.searchParams.get(
+				"v"
+			)}`;
 		}
-		// Allow embed URLs as is
-		if (
-			urlObj.hostname.includes("youtube.com") ||
-			urlObj.hostname.includes("youtube-nocookie.com")
-		) {
+		if (urlObj.hostname.includes("youtube-nocookie.com")) {
 			return url;
 		}
 	} catch {
-		// Invalid URL, return as is
-		return url;
+		return ""; // Return empty string if URL is invalid
 	}
-	return url;
+	return "";
 };
 
 /**
@@ -81,13 +83,13 @@ export default function Edit({ attributes, setAttributes }) {
 				<PanelBody title={__("Block Settings", "yt-video-block")}>
 					<TextControl
 						label={__("Video URL", "yt-video-block")}
-						value={videoURL || ""} // Ensure a default value
+						value={videoURL || ""}
 						onChange={(value) =>
 							setAttributes({ videoURL: transformYouTubeURL(value) })
 						}
 						placeholder={__("Enter a valid YouTube URL", "yt-video-block")}
 						help={__(
-							"YouTube video links will automatically be converted to an embed URL for compatibility.",
+							"Only YouTube links are allowed. They will be converted to secure embed URLs.",
 							"yt-video-block"
 						)}
 					/>
@@ -106,7 +108,11 @@ export default function Edit({ attributes, setAttributes }) {
 			{/* Editor Preview */}
 			<div {...blockProps}>
 				{coverImage && (
-					<img src={coverImage} alt={__("Video Cover", "yt-video-block")} />
+					<img
+						src={coverImage}
+						alt={__("Video Cover", "yt-video-block")}
+						loading="lazy"
+					/>
 				)}
 				<button type="button" aria-label={__("Play video", "yt-video-block")}>
 					<svg

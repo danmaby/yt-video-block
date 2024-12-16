@@ -38,8 +38,15 @@ The block supports standard YouTube URLs, including both full URLs and shortened
 
 == Changelog ==
 
-= 0.1.9 =
+= 0.2.0 =
 - *Current stable release*
+- Security enhancements
+    - Add strict regex to validate only valid YouTube URLs
+    - Ensure invalid URLs are sanitized to an empty string
+    - Update `transformYouTubeURL` helper function to handle various YouTube URL formats
+- Add `loading="lazy"` attribute to cover image in `Save` component
+
+= 0.1.9 =
 - Minor CSS improvements
 
 = 0.1.8 =

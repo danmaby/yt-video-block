@@ -24,7 +24,7 @@ export default function Save({ attributes }) {
 
 	return (
 		<div {...blockProps}>
-			{coverImage && <img src={coverImage} alt="Video Cover" />}
+			{coverImage && <img src={coverImage} alt="Video Cover" loading="lazy" />}
 			<button type="button" aria-label="Play video">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
