@@ -43,7 +43,15 @@ import "./editor.scss";
 export default function Edit({ attributes, setAttributes }) {
 	const { coverImage, videoURL } = attributes;
 
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps({
+		style: {
+			position: "relative",
+			width: "100%",
+			maxWidth: "560px",
+			aspectRatio: "16/9",
+		},
+		"data-video-url": videoURL || "",
+	});
 
 	return (
 		<>
@@ -68,16 +76,8 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 
-			{/* Preview Block */}
-			<div
-				{...blockProps}
-				style={{
-					position: "relative",
-					width: "100%",
-					maxWidth: "560px",
-					aspectRatio: "16/9",
-				}}
-			>
+			{/* Editor Preview */}
+			<div {...blockProps}>
 				{coverImage && (
 					<img
 						src={coverImage}
@@ -89,6 +89,7 @@ export default function Edit({ attributes, setAttributes }) {
 							width: "100%",
 							height: "100%",
 							objectFit: "cover",
+							cursor: "pointer",
 						}}
 					/>
 				)}
@@ -113,6 +114,7 @@ export default function Edit({ attributes, setAttributes }) {
 						padding: 0,
 						outline: "none",
 					}}
+					aria-label={__("Play video", "yt-video-block")}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
