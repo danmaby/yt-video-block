@@ -38,8 +38,14 @@ The block supports standard YouTube URLs, including both full URLs and shortened
 
 == Changelog ==
 
+= 0.1.8 =
+- *Current stable release*
+- Add `transformYouTubeURL` helper function to convert YouTube video URLs to embed URLs
+- Update `TextControl` component to use `transformYouTubeURL` when setting video URL attribute
+- Add help text to explain the URL transformation behavior
+- CSS improvements
+
 = 0.1.7 =
-- Current stable release
 - Remove inline styles from `edit.js` and `save.js`
 - Add new SCSS styles to `editor.scss` and `style.scss`
 - Update `build/index.css` and `build/index-rtl.css` with new styles
