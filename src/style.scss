@@ -1,0 +1,14 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-.video-block-preview {
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
