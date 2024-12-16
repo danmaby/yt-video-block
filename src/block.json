@@ -7,6 +7,16 @@
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "A lightweight, accessible, and customisable YouTube video block.",
+	"attributes": {
+		"coverImage": {
+			"type": "string",
+			"default": ""
+		},
+		"videoURL": {
+			"type": "string",
+			"default": ""
+		}
+	},
 	"example": {},
 	"supports": {
 		"html": false
