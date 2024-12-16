@@ -18,19 +18,18 @@ import { useBlockProps } from "@wordpress/block-editor";
 export default function Save({ attributes }) {
 	const { coverImage, videoURL } = attributes;
 
-	const blockProps = useBlockProps.save();
+	const blockProps = useBlockProps.save({
+		style: {
+			position: "relative",
+			width: "100%",
+			maxWidth: "560px",
+			aspectRatio: "16 / 9",
+		},
+		"data-video-url": videoURL || "",
+	});
 
 	return (
-		<div
-			{...blockProps}
-			data-video-url={videoURL} // Pass the video URL as a data attribute
-			style={{
-				position: "relative",
-				width: "100%",
-				maxWidth: "560px",
-				aspectRatio: "16 / 9",
-			}}
-		>
+		<div {...blockProps}>
 			{coverImage && (
 				<img
 					src={coverImage}
@@ -67,7 +66,7 @@ export default function Save({ attributes }) {
 					padding: 0,
 					outline: "none",
 				}}
-				aria-label="Play video"
+				aria-label={__("Play video", "yt-video-block")}
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
