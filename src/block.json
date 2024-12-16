@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/yt-video-block",
+	"version": "0.1.2",
+	"title": "YouTube Video Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "A lightweight, accessible, and customisable YouTube video block.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "yt-video-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
